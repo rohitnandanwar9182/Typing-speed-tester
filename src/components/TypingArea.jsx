@@ -3,16 +3,27 @@ import React from 'react';
 
 const TypingArea = ({
   typingText,
+  inpFieldValue,
   timeLeft,
   mistakes,
   WPM,
   CPM,
+  initTyping,
+  handleKeyDown,
   resetGame,
+  openMobileKeyboard,
 }) => {
   return (
     <div className="section">
       <div className="section1">
-        <p id="paragraph">{typingText}</p>
+        <p id="paragraph" onClick={openMobileKeyboard}>{typingText}</p>
+        <button
+          type="button"
+          className="mobile-keyboard-btn"
+          onClick={openMobileKeyboard}
+        >
+          ⌨️ Tap to type
+        </button>
       </div>
       <div className="section2">
         <ul className="resultDetails">
